@@ -7,8 +7,9 @@ import messageRoutes from "./routes/message.routes.js";
 import userRoutes from "./routes/user.routes.js";
 
 import connectToMongoDB from "./db/connectToMongoDB.js";
+import { app, server } from "./socket/socket.js";
 
-const app = express();
+
 
 app.use(express.json()); // to parse the incoming requests with JSON payloads(from req.body)
 app.use(cookieParser()); // to parse the incoming cookies from req.cookies
@@ -27,7 +28,7 @@ app.use("/api/users", userRoutes);
 //   res.send("Hello World!!");
 // });
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   connectToMongoDB();
   console.log(`Server running on port ${PORT}`);
 });
