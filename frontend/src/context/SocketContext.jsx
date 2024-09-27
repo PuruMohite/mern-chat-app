@@ -5,7 +5,7 @@ import io from "socket.io-client";
 const SocketContext = createContext();
 
 export const useSocketContext = () => {
-    return useContext(SocketContext);
+  return useContext(SocketContext);
 };
 
 export const SocketContextProvider = ({ children }) => {
@@ -15,7 +15,7 @@ export const SocketContextProvider = ({ children }) => {
 
   useEffect(() => {
     if (authUser) {
-      const socket = io("http://localhost:5000", {
+      const socket = io("https://chat-app-prototype.onrender.com", {
         query: {
           userId: authUser._id,
         },
@@ -26,7 +26,7 @@ export const SocketContextProvider = ({ children }) => {
       //socket.on() is used to listen to events. can be used both on client and server side
       socket.on("getOnlineUsers", (users) => {
         setOnlineUsers(users);
-      })
+      });
 
       return () => socket.close();
     } else {
