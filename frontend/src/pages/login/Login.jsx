@@ -14,38 +14,38 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4 sm:p-6">
-      <div className="w-full max-w-md p-6 shadow-md bg-blue-0 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10">
-        <h1 className="text-2xl sm:text-3xl font-semibold text-center text-gray-300">
+    <div className="flex flex-col items-center justify-center min-h-screen p-4 sm:p-6 lg:p-8">
+      <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg p-6 shadow-lg bg-blue-0 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-center text-gray-300">
           Login <span className="text-blue-500">ChatApp</span>
         </h1>
 
         <form onSubmit={handleSubmit}>
-          <div className="mt-4">
+          <div className="mt-6">
             <label className="label p-2">
-              <span className="text-base sm:text-lg label-text text-gray-300">
+              <span className="text-base sm:text-lg lg:text-xl label-text text-gray-300">
                 Username
               </span>
             </label>
             <input
               type="text"
               placeholder="Enter username"
-              className="w-full input input-bordered h-10 sm:h-12 bg-slate-900 text-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              className="w-full input input-bordered h-10 sm:h-12 lg:h-14 bg-slate-900 text-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
           </div>
 
-          <div className="mt-4">
+          <div className="mt-6">
             <label className="label">
-              <span className="text-base sm:text-lg label-text text-gray-300">
+              <span className="text-base sm:text-lg lg:text-xl label-text text-gray-300">
                 Password
               </span>
             </label>
             <input
               type="password"
               placeholder="Enter Password"
-              className="w-full input input-bordered h-10 sm:h-12 bg-slate-900 text-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              className="w-full input input-bordered h-10 sm:h-12 lg:h-14 bg-slate-900 text-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -53,14 +53,14 @@ const Login = () => {
 
           <Link
             to="/signup"
-            className="text-sm sm:text-base text-gray-400 hover:underline hover:text-blue-600 mt-2 inline-block"
+            className="text-sm sm:text-base lg:text-lg text-gray-400 hover:underline hover:text-blue-600 mt-4 inline-block"
           >
             Don't have an account?
           </Link>
 
-          <div className="mt-6">
+          <div className="mt-8">
             <button
-              className="w-full h-10 sm:h-12 bg-slate-950 text-gray-300 hover:bg-black border-none rounded-md hover:shadow-[0_10px_50px_rgba(8,_112,_184,_0.7)] duration-300 ease-in"
+              className="w-full h-10 sm:h-12 lg:h-14 bg-slate-950 text-gray-300 hover:bg-black border-none rounded-md hover:shadow-[0_10px_50px_rgba(8,_112,_184,_0.7)] duration-300 ease-in"
               disabled={loading}
             >
               {loading ? (
@@ -73,6 +73,7 @@ const Login = () => {
         </form>
       </div>
     </div>
+
   );
 };
 
